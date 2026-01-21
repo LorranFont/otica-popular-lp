@@ -1,4 +1,5 @@
 import { MessageCircle, MapPin, Glasses, Sun, BookOpen } from "lucide-react";
+import CardUnidade from "@/components/CardUnidade";
 
 export default function Home() {
   return (
@@ -50,33 +51,10 @@ export default function Home() {
       </section>
 
       {/* 4. Nossas Unidades (Parnaíba) */}
-      <section className="py-12 px-6 bg-gray-50">
-        <h3 className="text-2xl font-bold text-purple-900 text-center mb-8">Encontre uma Ótica Popular</h3>
+      <section className="py-12 px-6 bg-gray-100">
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center">
-            <div>
-              <p className="font-bold text-purple-800 flex items-center gap-2">
-                <MapPin size={16} /> Unidade Centro
-              </p>
-              <p className="text-sm text-gray-500">Parnaíba - PI</p>
-            </div>
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </button>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center">
-            <div>
-              <p className="font-bold text-purple-800 flex items-center gap-2">
-                <MapPin size={16} /> Unidade Loja 02
-              </p>
-              <p className="text-sm text-gray-500">Parnaíba - PI</p>
-            </div>
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </button>
-          </div>
+            <CardUnidade nome="Ótica Popular - Centro" cidade="Parnaíba - PI" />
+            <CardUnidade nome="Ótica Popular - Loja 02" cidade="Parnaíba - PI" />
 
         </div>
       </section>
