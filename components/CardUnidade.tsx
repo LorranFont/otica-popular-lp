@@ -1,23 +1,29 @@
 import { MapPin, MessageCircle } from "lucide-react";
 
-// Props
 interface CardUnidadeProps {
   nome: string;
-  cidade: string;
+  endereco: string;
+  bairro: string;
+  linkWhats: string;
 }
 
-export default function CardUnidade({ nome, cidade }: CardUnidadeProps) {
+export default function CardUnidade({ nome, endereco, bairro, linkWhats }: CardUnidadeProps) {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center hover:shadow-md transition-shadow">
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-center hover:border-otica-roxo/30 transition-all group">
       <div>
-        <p className="font-bold text-otica-roxo flex items-center gap-2">
-          <MapPin size={16} /> {nome}
+        <p className="font-bold text-otica-roxo flex items-center gap-2 text-lg">
+          <MapPin size={18} className="text-otica-roxo" /> {nome}
         </p>
-        <p className="text-sm text-gray-500">{cidade}</p>
+        <p className="text-sm text-slate-500 mt-1">{endereco}</p>
+        <p className="text-xs text-slate-400 font-bold uppercase mt-1">{bairro} - Parnaíba</p>
       </div>
-      <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-green-600">
-        <MessageCircle size={16} /> WhatsApp
-      </button>
+      <a 
+        href={linkWhats}
+        target="_blank"
+        className="bg-green-500 text-white p-4 rounded-xl hover:bg-green-600 transition-all shadow-md group-hover:scale-110"
+      >
+        <MessageCircle size={24} />
+      </a>
     </div>
   );
 }
