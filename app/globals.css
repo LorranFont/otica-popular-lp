@@ -4,3 +4,7 @@
   --color-otica-roxo: #6b21a8;
   --color-otica-amarelo: #facc15;
 }
+
+html {
+  scroll-behavior: smooth;
+}

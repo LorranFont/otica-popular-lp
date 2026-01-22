@@ -16,33 +16,44 @@ export default function Home() {
     <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
       {/* 1. Header */}
       <header className="bg-white border-b border-slate-100 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-        <Image
-          src="/logo_otica.png"
-          alt="Ótica Popular Logo"
-          width={150}
-          height={50}
-          className="object-contain"
-        />
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center">
+          <Image
+            src="/logo_otica.png"
+            alt="Ótica Popular Logo"
+            width={130}
+            height={40}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="flex items-center gap-6">
+          {/* Link para Unidades */}
           <a
-            href="#"
-            className="text-slate-400 hover:text-otica-roxo transition-colors"
+            href="#unidades"
+            className="hidden md:block text-slate-500 hover:text-otica-roxo font-bold text-sm transition-colors"
           >
-            <Instagram size={20} />
+            Nossas Lojas
           </a>
+
+          {/* Botão de WhatsApp Principal */}
           <a
-            href="#"
-            className="text-slate-400 hover:text-otica-roxo transition-colors"
+            href="https://wa.me/seu-numero"
+            target="_blank"
+            className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-full hover:bg-[#128C7E] transition-all shadow-md active:scale-95 group"
           >
-            <Facebook size={20} />
+            <Image
+              src="/logo_whats.png"
+              alt="WhatsApp"
+              width={20}
+              height={20}
+              className="brightness-0 invert"
+            />
+            <span className="font-bold text-sm">Falar agora</span>
           </a>
-          <button className="bg-green-500 text-white p-2.5 rounded-full hover:bg-green-600 transition-all shadow-sm">
-            <MessageCircle size={20} />
-          </button>
         </div>
       </header>
 
-      {/* 2. Banner Principal "Suave" (Hero) */}
+      {/* 2. Banner Principal */}
       <section className="relative bg-otica-roxo overflow-hidden py-16 md:py-24">
         {/* Elementos Decorativos */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-otica-amarelo/10 rounded-l-full blur-3xl" />
@@ -101,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* 4. Unidades */}
-      <section className="bg-white py-24 border-y border-slate-100">
+      <section id="unidades" className="bg-white py-24 border-y border-slate-100 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h3 className="text-3xl font-black text-otica-roxo mb-4">
@@ -127,11 +138,47 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-12 text-center text-slate-400 text-sm">
-        <p className="font-bold text-otica-roxo/50 mb-2">
-          Ótica Popular © Parnaíba-PI
-        </p>
-        <p>Sua visão é a nossa missão desde 2008</p>
+      <footer className="bg-slate-50 py-16 border-t border-slate-200">
+        <div className="container mx-auto px-6 flex flex-col items-center">
+          {/* Logo no Footer */}
+          <Image
+            src="/logo_otica.png"
+            alt="Ótica Popular Logo"
+            width={120}
+            height={40}
+            className="grayscale opacity-50 mb-8"
+          />
+
+          {/* Redes Sociais */}
+          <div className="flex gap-8 mb-8">
+            <a
+              href="#"
+              className="text-slate-400 hover:text-otica-roxo transition-colors flex flex-col items-center gap-1"
+            >
+              <Instagram size={24} />
+              <span className="text-[10px] font-bold uppercase tracking-widest">
+                Instagram
+              </span>
+            </a>
+            <a
+              href="#"
+              className="text-slate-400 hover:text-otica-roxo transition-colors flex flex-col items-center gap-1"
+            >
+              <Facebook size={24} />
+              <span className="text-[10px] font-bold uppercase tracking-widest">
+                Facebook
+              </span>
+            </a>
+          </div>
+
+          {/* Info de Copyright */}
+          <div className="text-center text-slate-400 text-xs border-t border-slate-200 pt-8 w-full max-w-xs">
+            <p className="font-bold text-otica-roxo/40 mb-1">
+              Ótica Popular - Parnaíba/PI
+            </p>
+            <p>© 2026 | Sua visão é a nossa missão.</p>
+          </div>
+        </div>
       </footer>
     </main>
   );
