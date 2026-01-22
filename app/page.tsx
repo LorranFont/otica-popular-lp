@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* 4. Unidades */}
-      <section id="unidades" className="bg-white py-24 border-y border-slate-100 scroll-mt-20">
+      <section id="unidades" className="bg-white py-24 border-y border-slate-100 scroll-mt-20 ">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h3 className="text-3xl font-black text-otica-roxo mb-4">

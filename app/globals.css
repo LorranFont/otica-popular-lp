@@ -3,8 +3,13 @@
 @theme {
   --color-otica-roxo: #6b21a8;
   --color-otica-amarelo: #facc15;
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
