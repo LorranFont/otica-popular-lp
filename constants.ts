@@ -16,6 +16,13 @@ export const UNIDADES = [
 
 ];
 
+export const CATEGORIAS = [
+ { label: "Armações", href: "#armacoes" },
+  { label: "Óculos de Sol", href: "#sol" },
+  { label: "Lentes de Contato", href: "#lentes" },
+  { label: "Exame de Vista", href: "#exame" },
+];
+
 
 export const PRODUTOS = [
   {
@@ -54,3 +61,4 @@ export const PRODUTOS = [
     imagemHover: "/produtos/oculos-5-hover.png"
   }
 ];
+

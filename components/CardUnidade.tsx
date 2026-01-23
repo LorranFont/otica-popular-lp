@@ -22,7 +22,7 @@ export default function CardUnidade({ nome, endereco, bairro, linkWhats }: CardU
         target="_blank"
         className="bg-green-500 text-white p-4 rounded-xl hover:bg-green-600 transition-all shadow-md group-hover:scale-110"
       >
-        <MessageCircle size={24} />
+        <img src="/produtos/logo_whats.png" alt="Logo do WhatsApp" className="w-8 h-8" />
       </a>
     </div>
   );

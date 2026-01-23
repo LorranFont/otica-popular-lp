@@ -13,7 +13,7 @@
  } from "lucide-react";
  import CardUnidade from "../components/CardUnidade";
  import CardProduto from "../components/CardProduto";
- import { UNIDADES, PRODUTOS } from "../constants";
+ import { UNIDADES, PRODUTOS, CATEGORIAS } from "../constants";
 
  export default function Home() {
    const carouselRef = useRef<HTMLDivElement>(null);
@@ -49,42 +49,52 @@
    return (
      <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
       {/* 1. Header */}
-      <header className="bg-white border-b border-slate-100 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center">
-          <Image
-            src="/logo_otica.png"
-            alt="Ótica Popular Logo"
-            width={130}
-            height={40}
-            className="object-contain"
-          />
-        </div>
+      <header className="bg-white border-b border-slate-100 py-3 px-6 flex justify-between items-center sticky top-0 z-50">
+        {/* Lado Esquerdo */}
+  <div className="flex items-center gap-8">
+    <Image 
+      src="/logo_otica.png" 
+      alt="Ótica Popular Logo" 
+      width={120} 
+      height={35} 
+      className="object-contain"
+    />
 
-        <div className="flex items-center gap-6">
-          {/* Link para Unidades */}
-          <a
-            href="#unidades"
-            className="hidden md:block text-slate-500 hover:text-otica-roxo font-bold text-sm transition-colors"
-          >
-            Nossas Lojas
-          </a>
+    {/* Centro: Categorias */}
+    <nav className="hidden lg:flex items-center gap-6">
+      {CATEGORIAS.map((cat) => (
+        <a 
+          key={cat.label}
+          href={cat.href}
+          className="text-[13px] font-bold text-slate-500 hover:text-otica-roxo uppercase tracking-wider transition-colors"
+        >
+          {cat.label}
+        </a>
+      ))}
+    </nav>
+  </div>
 
-          {/* Botão de WhatsApp Principal */}
-          <a
-            href="https://wa.me/seu-numero"
-            target="_blank"
-            className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-full hover:bg-[#128C7E] transition-all shadow-md active:scale-95 group"
-          >
-            <Image
-              src="/logo_whats.png"
-              alt="WhatsApp"
-              width={20}
-              height={20}
-              className="brightness-0 invert"
-            />
-            <span className="font-bold text-sm">Falar agora</span>
-          </a>
-        </div>
+  {/* Lado Direito */}
+  <div className="flex items-center gap-4">
+    <a href="#unidades" className="hidden md:block text-slate-400 hover:text-slate-600 font-bold text-xs uppercase">
+      Lojas
+    </a>
+    
+    <a 
+      href="https://wa.me/seu-numero" 
+      target="_blank" 
+      className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-full hover:bg-[#128C7E] transition-all shadow-md"
+    >
+      <Image 
+        src="/logo_whats.png" 
+        alt="logo-whatsapp" 
+        width={18} 
+        height={18} 
+        
+      />
+      <span className="font-bold text-xs">Falar agora</span>
+    </a>
+  </div>
       </header>
 
       {/* 2. Banner Principal */}
@@ -115,33 +125,6 @@
           <div className="relative w-full max-w-md aspect-square bg-white/5 rounded-[40px] border border-white/10 flex items-center justify-center italic text-white/20">
             Foto da Modelo Aqui
           </div>
-        </div>
-      </section>
-
-      {/* 3. Categorias */}
-      <section className="py-20 container mx-auto px-6">
-        <h2 className="text-center text-slate-400 uppercase tracking-[0.2em] text-xs font-bold mb-12">
-          O que você procura?
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { icon: Glasses, label: "Armações" },
-            { icon: Sun, label: "Óculos de Sol" },
-            { icon: BookOpen, label: "Lentes" },
-            { icon: MessageCircle, label: "Exame de Vista" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-20 h-20 bg-white shadow-sm border border-slate-100 rounded-[24px] flex items-center justify-center text-otica-roxo group-hover:bg-otica-roxo group-hover:text-white transition-all duration-300 mb-4">
-                <item.icon size={32} />
-              </div>
-              <span className="font-bold text-slate-700 group-hover:text-otica-roxo transition-colors">
-                {item.label}
-              </span>
-            </div>
-          ))}
         </div>
       </section>
 
