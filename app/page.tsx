@@ -1,19 +1,53 @@
-import Image from "next/image";
-import {
-  MessageCircle,
-  MapPin,
-  Glasses,
-  Sun,
-  BookOpen,
-  Instagram,
-  Facebook,
-} from "lucide-react";
-import CardUnidade from "../components/CardUnidade";
-import { UNIDADES } from "../constants";
+ "use client";
+ import Image from "next/image";
+ import { useRef, useEffect, useState } from "react";
+ import {
+   MessageCircle,
+   Glasses,
+   Sun,
+   BookOpen,
+   Instagram,
+   Facebook,
+   ChevronLeft,
+   ChevronRight,
+ } from "lucide-react";
+ import CardUnidade from "../components/CardUnidade";
+ import CardProduto from "../components/CardProduto";
+ import { UNIDADES, PRODUTOS } from "../constants";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
+ export default function Home() {
+   const carouselRef = useRef<HTMLDivElement>(null);
+   const [isPaused, setIsPaused] = useState(false);
+ 
+   const scroll = (direction: "left" | "right") => {
+     if (carouselRef.current) {
+       const scrollAmount = carouselRef.current.offsetWidth;
+       carouselRef.current.scrollBy({
+         left: direction === "left" ? -scrollAmount : scrollAmount,
+         behavior: "smooth",
+       });
+     }
+   };
+ 
+   useEffect(() => {
+     const interval = setInterval(() => {
+       if (!isPaused && carouselRef.current) {
+         const maxScroll =
+           carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
+ 
+         if (carouselRef.current.scrollLeft >= maxScroll - 10) {
+           carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+         } else {
+           carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+         }
+       }
+     }, 3000);
+ 
+     return () => clearInterval(interval);
+   }, [isPaused]);
+ 
+   return (
+     <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
       {/* 1. Header */}
       <header className="bg-white border-b border-slate-100 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
         <div className="flex items-center">
@@ -111,8 +145,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3. Vitrine de Produtos */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter">
+                Destaques
+              </h3>
+              <p className="text-slate-500 font-medium">
+                As melhores grifes em Parnaíba
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => scroll("left")}
+                className="p-3 rounded-full border border-slate-200 hover:bg-otica-roxo hover:text-white transition-all shadow-sm"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                className="p-3 rounded-full border border-slate-200 hover:bg-otica-roxo hover:text-white transition-all shadow-sm"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+          <div
+            ref={carouselRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide"
+          >
+            {PRODUTOS.map((produto) => (
+              <div
+                key={produto.id}
+                className="min-w-[85%] md:min-w-[calc(25%-1.5rem)] snap-center"
+              >
+                <CardProduto
+                  imagem={produto.imagem}
+                  imagemHover={produto.imagemHover}
+                  modelo={produto.modelo}
+                  marca={produto.marca}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. Unidades */}
-      <section id="unidades" className="bg-white py-24 border-y border-slate-100 scroll-mt-20 ">
+      <section
+        id="unidades"
+        className="bg-white py-24 border-y border-slate-100 scroll-mt-20 "
+      >
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h3 className="text-3xl font-black text-otica-roxo mb-4">
