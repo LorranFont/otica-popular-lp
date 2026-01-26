@@ -10,9 +10,11 @@
    Facebook,
    ChevronLeft,
    ChevronRight,
+   MenuIcon,
  } from "lucide-react";
  import CardUnidade from "../components/CardUnidade";
  import CardProduto from "../components/CardProduto";
+ import BtnWhatsapp from "../components/BtnWhatsapp";
  import { UNIDADES, PRODUTOS, CATEGORIAS } from "../constants";
 
  export default function Home() {
@@ -61,17 +63,21 @@
     />
 
     {/* Centro: Categorias */}
-    <nav className="hidden lg:flex items-center gap-6">
-      {CATEGORIAS.map((cat) => (
-        <a 
-          key={cat.label}
-          href={cat.href}
-          className="text-[13px] font-bold text-slate-500 hover:text-otica-roxo uppercase tracking-wider transition-colors"
-        >
-          {cat.label}
-        </a>
-      ))}
-    </nav>
+    <nav className="hidden lg:flex items-center gap-8">
+          {CATEGORIAS.map((cat) => (
+            <a 
+              key={cat.label}
+              href={cat.href}
+              className="text-[12px] font-black text-slate-500 hover:text-otica-roxo uppercase tracking-[0.15em] transition-all"
+            >
+              {cat.label}
+            </a>
+          ))}
+        </nav>
+        {/* BotãoMobile (Hambúrguer) */}
+        <div className="lg:hidden">
+            <MenuIcon className="w-6 h-6 text-slate-500 hover:text-otica-roxo transition-colors" />
+        </div>
   </div>
 
   {/* Lado Direito */}
@@ -79,22 +85,8 @@
     <a href="#unidades" className="hidden md:block text-slate-400 hover:text-slate-600 font-bold text-xs uppercase">
       Lojas
     </a>
-    
-    <a 
-      href="https://wa.me/seu-numero" 
-      target="_blank" 
-      className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-full hover:bg-[#128C7E] transition-all shadow-md"
-    >
-      <Image 
-        src="/logo_whats.png" 
-        alt="logo-whatsapp" 
-        width={18} 
-        height={18} 
-        
-      />
-      <span className="font-bold text-xs">Falar agora</span>
-    </a>
   </div>
+  
       </header>
 
       {/* 2. Banner Principal */}
@@ -250,6 +242,7 @@
           </div>
         </div>
       </footer>
+      <BtnWhatsapp />
     </main>
   );
 }

@@ -21,6 +21,8 @@ export const CATEGORIAS = [
   { label: "Óculos de Sol", href: "#sol" },
   { label: "Lentes de Contato", href: "#lentes" },
   { label: "Exame de Vista", href: "#exame" },
+  { label: "Indique e Ganhe", href: "https://indiqueganhemasi.com.br/landing" },
+  {label: "Links Úteis", href: "/"}
 ];
 
 
