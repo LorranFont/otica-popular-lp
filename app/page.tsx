@@ -55,7 +55,7 @@ export default function Home() {
       </div>
 
       {/* Busca e Categorias */}
-      <div className="flex-1 max-w-2xl flex flex-col gap-4 order-2">
+      <div className="flex-1 max-w-3xl flex flex-col gap-4 order-2">
         <div className="relative group">
           <input 
             type="text" 
