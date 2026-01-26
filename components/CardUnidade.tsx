@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface CardUnidadeProps {
   nome: string;

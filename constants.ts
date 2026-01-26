@@ -17,12 +17,12 @@ export const UNIDADES = [
 ];
 
 export const CATEGORIAS = [
- { label: "Armações", href: "#armacoes" },
+ { label: "Óculos de grau", href: "#oculos-de-grau" },
   { label: "Óculos de Sol", href: "#sol" },
-  { label: "Lentes de Contato", href: "#lentes" },
-  { label: "Exame de Vista", href: "#exame" },
+  { label: "Lentes de Grau", href: "#lentes" },
+  {label: "Promoções", href: "/"},
+  { label: "Novidades", href: "#novidades" },
   { label: "Indique e Ganhe", href: "https://indiqueganhemasi.com.br/landing" },
-  {label: "Links Úteis", href: "/"}
 ];
 
 
