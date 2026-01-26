@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { User, ShoppingCart, Search, ChevronLeft, ChevronRight, MessageCircle, Instagram, Facebook, MapPin } from "lucide-react";
+import { User, ShoppingCart, Search, ChevronLeft, ChevronRight, MessageCircle, Instagram, Facebook, MapPin, Menu, X } from "lucide-react";
 import { PRODUTOS, CATEGORIAS, UNIDADES } from "../constants";
 import CardProduto from "../components/CardProduto";
 import CardUnidade from "../components/CardUnidade";
@@ -32,7 +32,8 @@ export default function Home() {
       carouselRef.current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
     }
   };
-
+  
+const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
       
@@ -40,6 +41,11 @@ export default function Home() {
       <header className="bg-otica-roxo border-b border-slate-100 sticky top-0 z-[100] shadow-sm py-4">
   <div className="container mx-auto px-6">
     <div className="flex items-center justify-between gap-8 md:gap-12">
+
+      {/* Menu Hambúrguer */}
+      <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-full text-slate-600 text-white hover:text-otica-amarelo transition-all">
+        <Menu size={30} />
+      </button>
       
       {/* Login e Carrinho */}
       <div className="flex items-center gap-4 order-1">
@@ -118,7 +124,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      
       {/* 3. VITRINE DE PRODUTOS */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
