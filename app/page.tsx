@@ -200,48 +200,83 @@
         </div>
       </section>
 
-      <footer className="bg-slate-50 py-16 border-t border-slate-200">
-        <div className="container mx-auto px-6 flex flex-col items-center">
-          {/* Logo no Footer */}
-          <Image
-            src="/logo_otica.png"
-            alt="Ótica Popular Logo"
-            width={120}
-            height={40}
-            className="grayscale opacity-50 mb-8"
-          />
+      <footer className="bg-otica-roxo text-white py-16">
+  <div className="container mx-auto px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-12">
+      
+      {/* 1. Branding e Missão */}
+      <div className="flex flex-col gap-6">
+        <Image 
+          src="/logo_otica.png" 
+          alt="Ótica Popular Logo" 
+          width={120} 
+          height={50} 
+           
+        />
+        <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+          ...
+        </p>
+      </div>
 
-          {/* Redes Sociais */}
-          <div className="flex gap-8 mb-8">
-            <a
-              href="#"
-              className="text-slate-400 hover:text-otica-roxo transition-colors flex flex-col items-center gap-1"
-            >
-              <Instagram size={24} />
-              <span className="text-[10px] font-bold uppercase tracking-widest">
-                Instagram
-              </span>
-            </a>
-            <a
-              href="#"
-              className="text-slate-400 hover:text-otica-roxo transition-colors flex flex-col items-center gap-1"
-            >
-              <Facebook size={24} />
-              <span className="text-[10px] font-bold uppercase tracking-widest">
-                Facebook
-              </span>
+      {/* 2. Navegação Institucional */}
+      <div>
+        <h4 className="font-black uppercase tracking-widest text-xs mb-6 text-otica-amarelo">Institucional</h4>
+        <ul className="flex flex-col gap-4 text-sm text-white/80">
+          <li><a href="#sobre" className="hover:text-white transition-colors">Sobre nós</a></li>
+          <li><a href="#produtos" className="hover:text-white transition-colors">Produtos</a></li>
+          <li><a href="#contato" className="hover:text-white transition-colors">Contato</a></li>
+          <li><a href="#" className="hover:text-white transition-colors">Mais Óticas</a></li>
+        </ul>
+      </div>
+
+      {/* 3. Ajuda e Suporte */}
+      <div>
+        <h4 className="font-black uppercase tracking-widest text-xs mb-6 text-otica-amarelo">Suporte</h4>
+        <ul className="flex flex-col gap-4 text-sm text-white/80">
+          <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#" className="hover:text-white transition-colors">Termos de uso</a></li>
+          <li><a href="#" className="hover:text-white transition-colors">Política de privacidade</a></li>
+        </ul>
+      </div>
+
+      {/* 4. Contato e Localização */}
+      <div className="flex flex-col gap-6">
+        <h4 className="font-black uppercase tracking-widest text-xs mb-2 text-otica-amarelo">Onde Estamos</h4>
+        
+        <div className="flex flex-col gap-4 text-sm">
+          <div>
+            <p className="font-bold mb-1">LOJA 1 - Centro</p>
+            <p className="text-white/70">Endereço</p>
+            <a href="tel:86999391222" className="flex items-center gap-2 mt-1 hover:text-green-400 transition-colors">
+              (86) 9939-1222 <MessageCircle size={16} />
             </a>
           </div>
 
-          {/* Info de Copyright */}
-          <div className="text-center text-slate-400 text-xs border-t border-slate-200 pt-8 w-full max-w-xs">
-            <p className="font-bold text-otica-roxo/40 mb-1">
-              Ótica Popular - Parnaíba/PI
-            </p>
-            <p>© 2026 | Sua visão é a nossa missão.</p>
+          <div>
+            <p className="font-bold mb-1">LOJA 2 - São Sebastião</p>
+            <p className="text-white/70">Av. João Silva Filho, 9999</p>
+            <a href="tel:86995956868" className="flex items-center gap-2 mt-1 hover:text-green-400 transition-colors">
+              (86) 99595-6868 <MessageCircle size={16} />
+            </a>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+
+    {/* Redes e Copyright */}
+    <div className="pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="flex gap-6">
+        <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all"><Facebook size={20} /></a>
+        <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-all"><Instagram size={20} /></a>
+      </div>
+      
+      <div className="text-center md:text-right">
+        <p className="text-white/40 text-[10px] uppercase tracking-widest mb-1">© 2026 Ótica Popular. Todos os direitos reservados.</p>
+        <p className="text-white/20 text-[9px]">Desenvolvido por Lorran Fontenele</p>
+      </div>
+    </div>
+  </div>
+</footer>
       <BtnWhatsapp />
     </main>
   );
