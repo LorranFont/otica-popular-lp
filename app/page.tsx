@@ -5,6 +5,7 @@ import { User, ShoppingCart, Search, ChevronLeft, ChevronRight, MessageCircle, I
 import { PRODUTOS, CATEGORIAS, UNIDADES } from "../constants";
 import CardProduto from "../components/CardProduto";
 import CardUnidade from "../components/CardUnidade";
+import BtnWhatsapp from "../components/BtnWhatsapp";
 
 export default function Home() {
    // Estados e refs
@@ -60,6 +61,7 @@ export default function Home() {
   <div className="container mx-auto px-6">
     <div className="flex items-center justify-between gap-4 md:gap-12">
       
+      <BtnWhatsapp />
       {/* Login e Carrinho */}
       <div className="flex items-center gap-2 md:gap-4 order-3">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white p-2">
@@ -160,7 +162,7 @@ export default function Home() {
           <div ref={carouselRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide">
             {PRODUTOS.map((produto) => (
               <div key={produto.id} className="min-w-[85%] md:min-w-[calc(25%-1.5rem)] snap-center">
-                <CardProduto imagem={produto.imagem} imagemHover={produto.imagemHover} modelo={produto.modelo} marca={produto.marca} />
+                <CardProduto id={produto.id} imagem={produto.imagem} imagemHover={produto.imagemHover} modelo={produto.modelo} marca={produto.marca} />
               </div>
             ))}
           </div>

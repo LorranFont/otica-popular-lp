@@ -9,7 +9,7 @@ interface CardUnidadeProps {
 
 export default function CardUnidade({ nome, endereco, bairro, linkWhats }: CardUnidadeProps) {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-center hover:border-otica-roxo/30 transition-all group">
+    <div className="font-rubik bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-center hover:border-otica-roxo/30 transition-all group">
       <div>
         <p className="font-bold text-otica-roxo flex items-center gap-2 text-lg">
           <MapPin size={18} className="text-otica-roxo" /> {nome}

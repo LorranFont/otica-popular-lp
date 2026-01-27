@@ -1,37 +1,39 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface CardProdutoProps {
+  id: number | string;
   imagem: string;
   imagemHover: string;
   modelo: string;
   marca: string;
 }
 
-export default function CardProduto({ imagem, imagemHover, modelo, marca }: CardProdutoProps) {
+export default function CardProduto({ id, imagem, imagemHover, modelo, marca }: CardProdutoProps) {
   return (
-    <div className="group cursor-pointer flex flex-col items-center">
+    <Link href={`/produto/${id}`} className="group cursor-pointer flex flex-col items-center font-rubik">
       <div className="relative w-full aspect-[4/3] transition-all duration-500">
-        
+
         {/* Imagem Principal */}
-        <Image 
-          src={imagem} 
-          alt={modelo} 
+        <Image
+          src={imagem}
+          alt={modelo}
           fill
           className="object-contain transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-95"
         />
 
         {/* Imagem Secundária */}
-        <Image 
-          src={imagemHover} 
-          alt={`${modelo} lateral`} 
+        <Image
+          src={imagemHover}
+          alt={`${modelo} lateral`}
           fill
           className="object-contain opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:scale-110"
         />
-        
+
       </div>
 
       {/* Informações do Produto */}
-      <div className="mt-2 text-center">
+      <div className="font-rubik mt-2 text-center">
         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-otica-roxo/40">
           {marca}
         </p>
@@ -39,6 +41,6 @@ export default function CardProduto({ imagem, imagemHover, modelo, marca }: Card
           {modelo}
         </h4>
       </div>
-    </div>
+    </Link>
   );
 }
