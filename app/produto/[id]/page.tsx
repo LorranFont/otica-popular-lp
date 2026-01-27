@@ -77,7 +77,7 @@ export default function PaginaProduto() {
               </p>
             </div>
 
-            {/* Botões de Ação (Estilo Profissional) */}
+            {/* Botões de Ação */}
             <div className="flex flex-col gap-4">
               <button className="w-full bg-slate-900 text-white font-black py-6 rounded-[24px] flex items-center justify-center gap-3 hover:bg-otica-roxo transition-all uppercase tracking-widest text-sm shadow-xl shadow-slate-200">
                 <ShoppingBag size={20} /> Comprar Armação

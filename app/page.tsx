@@ -162,7 +162,7 @@ export default function Home() {
           <div ref={carouselRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide">
             {PRODUTOS.map((produto) => (
               <div key={produto.id} className="min-w-[85%] md:min-w-[calc(25%-1.5rem)] snap-center">
-                <CardProduto id={produto.id} imagem={produto.imagem} imagemHover={produto.imagemHover} modelo={produto.modelo} marca={produto.marca} />
+                <CardProduto {...produto} />
               </div>
             ))}
           </div>

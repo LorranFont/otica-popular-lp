@@ -32,35 +32,45 @@ export const PRODUTOS = [
     modelo: "Aviator Classic",
     marca: "Ray-Ban",
     imagem: "/produtos/oculos-1-hover.png",
-    imagemHover: "/produtos/oculos-1.png"
+    imagemHover: "/produtos/oculos-1.png",
+    preco: 220.00,
+    precoPromocional: 159.99
   },
   {
     id: 2,
     modelo: "Holbrook",
     marca: "Oakley",
     imagem: "/produtos/oculos-2.png",
-    imagemHover: "/produtos/oculos-2-hover.png"
+    imagemHover: "/produtos/oculos-2-hover.png",
+    preco: 220.00,
+    precoPromocional: 159.99
   },
   {
     id: 3,
     modelo: "Round Metal",
     marca: "Ray-Ban",
     imagem: "/produtos/oculos-3.png",
-    imagemHover: "/produtos/oculos-3-hover.png"
+    imagemHover: "/produtos/oculos-3-hover.png",
+    preco: 220.00,
+    precoPromocional: 159.99
   },
   {
     id: 4,
     modelo: "Erika",
     marca: "Ray-Ban",
     imagem: "/produtos/oculos-4.png",
-    imagemHover: "/produtos/oculos-4-hover.png"
+    imagemHover: "/produtos/oculos-4-hover.png",
+    preco: 220.00,
+    precoPromocional: 159.99
   },
   {
     id: 5,
     modelo: "Wayfarer",
     marca: "Ray-Ban",
     imagem: "/produtos/oculos-5.png",
-    imagemHover: "/produtos/oculos-5-hover.png"
+    imagemHover: "/produtos/oculos-5-hover.png",
+    preco: 220.00,
+    precoPromocional: 159.99
   }
 ];
 
