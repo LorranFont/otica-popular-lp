@@ -9,6 +9,9 @@
   --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
+* {
+    font-family: "Rubik";
+}
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;

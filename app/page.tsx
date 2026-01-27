@@ -52,10 +52,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8F9FA] font-sans text-slate-900">
+    <main className="min-h-screen bg-[#F8F9FA] font-rubik text-slate-900">
       {/* 1. HEADER */}
       <header className={`bg-otica-roxo border-b border-white/10 sticky top-0 z-[100] shadow-sm transition-all duration-300 ${
-  isScrolled ? "py-2" : "py-4"
+  isScrolled ? "py-1" : "py-4"
 }`}>
   <div className="container mx-auto px-6">
     <div className="flex items-center justify-between gap-4 md:gap-12">
@@ -99,8 +99,8 @@ export default function Home() {
           <ul className={`flex justify-center gap-6 transition-all duration-300 ${isScrolled ? "mt-1" : ""}`}>
             {CATEGORIAS.map((cat) => (
               <li key={cat.label} className="whitespace-nowrap">
-                <a href={cat.href} className={`font-black text-white hover:text-otica-amarelo uppercase tracking-[0.10em] transition-all ${
-                  isScrolled ? "text-[12px]" : "text-[11px]"
+                <a href={cat.href} className={`font-black text-white hover:text-otica-amarelo uppercase tracking-[0.12em] transition-all ${
+                  isScrolled ? "text-[11px]" : "text-[11px]"
                 }`}>
                   {cat.label}
                 </a>
@@ -148,7 +148,7 @@ export default function Home() {
       
 
       {/* 3. VITRINE DE PRODUTOS */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white font-rubik">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div><h3 className="text-3xl font-black text-slate-900 uppercase">Destaques</h3><p className="text-slate-500 font-medium italic">O seu estilo em Parnaíba</p></div>
@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* 4. Exame */}
-      <section className="bg-otica-roxo py-24">
+      <section className="bg-otica-roxo py-24 font-rubik">
         <div className="container mx-auto px-6">
           <div className="mb-16">
             <span className="bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] mb-4 inline-block italic">● Facilitamos sua consulta</span>
@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* 4. UNIDADES */}
-      <section id="unidades" className="bg-[#F8F9FA] py-24 border-y border-slate-100 scroll-mt-20">
+      <section id="unidades" className="bg-[#F8F9FA] py-24 border-y border-slate-100 scroll-mt-20 font-rubik">
         <div className="container mx-auto px-6">
           <h3 className="text-3xl font-black text-center text-otica-roxo mb-12 uppercase">Nossas Unidades</h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
