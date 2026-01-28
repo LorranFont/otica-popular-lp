@@ -5,7 +5,8 @@ import { User, ShoppingCart, Search, ChevronLeft, ChevronRight, MessageCircle, I
 import { PRODUTOS, CATEGORIAS, UNIDADES } from "../constants";
 import CardProduto from "../components/CardProduto";
 import CardUnidade from "../components/CardUnidade";
-import BtnWhatsapp from "../components/BtnWhatsapp";
+
+import Header from "@/components/Header";
 
 export default function Home() {
    // Estados e refs
@@ -55,81 +56,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F9FA] font-rubik text-slate-900">
       {/* 1. HEADER */}
-      <header className={`bg-otica-roxo border-b border-white/10 sticky top-0 z-[100] shadow-sm transition-all duration-300 ${
-  isScrolled ? "py-1" : "py-4"
-}`}>
-  <div className="container mx-auto px-6">
-    <div className="flex items-center justify-between gap-4 md:gap-12">
       
-      <BtnWhatsapp />
-      {/* Login e Carrinho */}
-      <div className="flex items-center gap-2 md:gap-4 order-3">
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white p-2">
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-        
-        <button className="p-2 rounded-full text-white hover:text-otica-amarelo transition-all">         
-          <a href="/login">
-            <User size={isScrolled ? 24 : 28} strokeWidth={1.5} />
-          </a>
-        </button>
-        
-        <button className="relative p-2 rounded-full text-white hover:text-otica-amarelo transition-all">
-          <a href="/carrinho">
-            <ShoppingCart size={isScrolled ? 24 : 28} strokeWidth={1.5} />
-          </a>
-          <span className="absolute top-1 right-1 bg-white text-otica-roxo text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center border border-otica-roxo">
-            0
-          </span>
-        </button>
-      </div>
-
-      {/* Busca e Categorias  */}
-      <div className={`flex-1 max-w-3xl flex flex-col transition-all duration-300 order-2 ${
-        isScrolled ? "gap-0" : "gap-4"
-      }`}>
-        {/* Barra de Busca */}
-        <div className={`relative group transition-all duration-300 overflow-hidden ${
-          isScrolled ? "h-0 opacity-0 pointer-events-none" : "h-[46px] opacity-100"
-        }`}>
-          <input 
-            type="text" 
-            placeholder="O que você está buscando hoje?" 
-            className="w-full bg-slate-100/10 border border-white/20 py-3 px-12 rounded-2xl text-sm text-white placeholder:text-white/50 outline-none" 
-          />
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" size={18} />
-        </div>
-        
-        {/* Categorias */}
-        <nav className="hidden md:block overflow-x-auto scrollbar-hide">
-          <ul className={`flex justify-center gap-6 transition-all duration-300 ${isScrolled ? "mt-1" : ""}`}>
-            {CATEGORIAS.map((cat) => (
-              <li key={cat.label} className="whitespace-nowrap">
-                <a href={cat.href} className={`font-black text-white hover:text-otica-amarelo uppercase tracking-[0.12em] transition-all ${
-                  isScrolled ? "text-[11px]" : "text-[11px]"
-                }`}>
-                  {cat.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      {/* Logo  */}
-      <div className="flex-shrink-0 order-1 transition-all duration-300">
-        <Image 
-          src="/logo_otica.png" 
-          alt="Ótica Popular" 
-          width={isScrolled ? 100 : 130} 
-          height={isScrolled ? 30 : 40} 
-        />
-      </div>
-
-    </div>
-  </div>
-</header>
-
       {/* 2. BANNER PRINCIPAL */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
         {banners.map((banner, index) => (
