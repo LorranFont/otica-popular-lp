@@ -75,7 +75,9 @@ export default function Home() {
         </button>
         
         <button className="relative p-2 rounded-full text-white hover:text-otica-amarelo transition-all">
-          <ShoppingCart size={isScrolled ? 24 : 28} strokeWidth={1.5} />
+          <a href="/carrinho">
+            <ShoppingCart size={isScrolled ? 24 : 28} strokeWidth={1.5} />
+          </a>
           <span className="absolute top-1 right-1 bg-white text-otica-roxo text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center border border-otica-roxo">
             0
           </span>
