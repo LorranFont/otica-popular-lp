@@ -68,8 +68,10 @@ export default function Home() {
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
         
-        <button className="p-2 rounded-full text-white hover:text-otica-amarelo transition-all">
-          <User size={isScrolled ? 24 : 28} strokeWidth={1.5} />
+        <button className="p-2 rounded-full text-white hover:text-otica-amarelo transition-all">         
+          <a href="/login">
+            <User size={isScrolled ? 24 : 28} strokeWidth={1.5} />
+          </a>
         </button>
         
         <button className="relative p-2 rounded-full text-white hover:text-otica-amarelo transition-all">
@@ -209,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* 5. FOOTER */}
-      <footer className="bg-otica-roxo text-white pt-16 pb-8">
+      <footer className="bg-otica-roxo text-white pt-16 pb-8 font-rubik">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
             <div className="flex flex-col gap-6">
