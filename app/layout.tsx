@@ -1,9 +1,9 @@
 
 import type { Metadata } from "next";
+import { CartProvider } from "@/context/CartContext";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
-import Header from "@/components/Header";
 
 
 const geistSans = Geist({
@@ -23,15 +23,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
-  // Definimos as rotas onde NÃO queremos o Header e Footer
-  const rotasSemFooter = ["/login", "/registro"];
-
-
   return (
     <html lang="pt-br">
       <body>
+        <CartProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
-    
+        </CartProvider>
       </body>
     </html>
   );

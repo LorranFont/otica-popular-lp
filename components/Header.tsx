@@ -5,11 +5,13 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { User, ShoppingCart, Search, Menu, X } from "lucide-react";
 import { CATEGORIAS } from "@/constants";
+import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { totalItens } = useCart();
 
   const paginasCompactas = pathname.includes("/carrinho") || pathname.includes("/produto");
 
@@ -36,14 +38,19 @@ export default function Header() {
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
           <button className="text-white hover:text-otica-amarelo transition-colors">
-           <a href="/login" className="flex items-center gap-1">
-            <User size={headerCompacto ? 24 : 30} />
-           </a>
+            <a href="/login" className="flex items-center gap-1">
+              <User size={headerCompacto ? 24 : 30} />
+            </a>
           </button>
           <button className="relative text-white hover:text-otica-amarelo transition-colors">
-           <a href="/carrinho" className="flex items-center gap-1">
-            <ShoppingCart size={headerCompacto ? 24 : 30} />
-           </a>
+            <a href="/carrinho" className="flex items-center gap-1">
+              <ShoppingCart size={headerCompacto ? 24 : 30} />
+              {totalItens > 0 && (
+                <span className="absolute -top-1 -right-1 bg-white text-otica-roxo text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                    {totalItens}
+                </span>
+              )}  
+            </a>
             <span className="absolute -top-1 -right-1 bg-white text-otica-roxo text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
           </button>
         </div>
