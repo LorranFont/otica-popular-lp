@@ -1,17 +1,22 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Header from "./Header";
+import WhatsAppButton from "./WhatsAppButton";
 
+interface LayoutWrapperProps {
+  children: React.ReactNode;
+}
 
-export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
+export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const pathname = usePathname();
-  const rotasSemLayout = ["/login", "/registro"];
-  const esconderLayout = rotasSemLayout.includes(pathname);
+  const routesWithoutLayout = ["/login", "/register"];
+  const shouldHideLayout = routesWithoutLayout.includes(pathname);
 
   return (
     <>
-      {!esconderLayout && <Header />}
+      {!shouldHideLayout && <Header />}
       <main>{children}</main>
+      {!shouldHideLayout && <WhatsAppButton />}
     </>
   );
 }
